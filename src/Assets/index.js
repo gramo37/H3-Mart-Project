@@ -1,0 +1,1 @@
+export const NAVBAR_LOGO = "https://coincap.io/static/logos/black.svg"
