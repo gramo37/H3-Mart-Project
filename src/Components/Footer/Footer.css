@@ -1,0 +1,48 @@
+.footer-container {
+    padding: 25px;
+    background-image: linear-gradient(to right, rgb(63, 81, 181), rgb(100, 181, 246));
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer-container ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-container a, .footer-container span {
+    text-decoration: none;
+    color: white;
+    opacity: 0.5;
+}
+
+.footer-container a:hover {
+    opacity: 1;
+}
+
+.footer-container ul li {
+    list-style: none;
+}
+
+.footer-container h2{
+    font-size: 1rem;
+}
+
+.footer-right, .footer-left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.menu {
+    width: 290px;
+    color: white;
+}
+
+.right-menu2 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}

@@ -3,8 +3,20 @@ import useFetch from "../../Hooks/useFetch"
 import { BASE_URL } from '../../Constants/Constant';
 import "./Currencies.css"
 
+function convert(type, num) {
+    switch (type) {
+        case "billion":
+            return (parseFloat(num) / 1000000000).toFixed(2) + 'b'
+        case "million":
+            return (parseFloat(num) / 1000000).toFixed(2) + 'm'
+        default:
+            return parseFloat(num).toFixed(2)
+    }
+}
+
 const CurrenciesContainer = () => {
     const { data, loading, error } = useFetch(BASE_URL);
+
     return (
         <div>
             {loading && <h1>Loading...</h1>}
@@ -16,25 +28,29 @@ const CurrenciesContainer = () => {
                 (<>
                     <UpperContainer />
                     <div className='table-container flex-center'>
-                        <table className=''>
+                        <table cellSpacing={0}>
                             <tr>
-                                <th><span>Rank</span></th>
-                                <th><span>Name</span></th>
-                                <th><span>Price</span></th>
-                                <th><span>Market Cap</span></th>
-                                <th><span>Volume 24hr</span></th>
-                                <th><span>Change 24hr</span></th>
+                                <th style={{ textAlign: "center" }} colSpan={1}><span>Rank</span></th>
+                                <th style={{ textAlign: "left" }} colSpan={2}><span>Name</span></th>
+                                <th colSpan={1}><span>Price</span></th>
+                                <th colSpan={1}><span>Market Cap</span></th>
+                                <th colSpan={1}><span>VWAP 24hr</span></th>
+                                <th colSpan={1}><span>Supply</span></th>
+                                <th colSpan={1}><span>Volume 24hr</span></th>
+                                <th colSpan={1}><span>Change 24hr</span></th>
                             </tr>
 
-                            {data?.data?.map(({ id, rank, name, priceUsd, marketCapUsd, volumeUsd24Hr, changePercent24Hr }) => {
+                            {data?.data?.map(({ id, rank, name, priceUsd, marketCapUsd, vwap24Hr, supply, volumeUsd24Hr, changePercent24Hr, symbol }) => {
                                 return (
                                     <tr key={id}>
-                                        <td><span>{rank}</span></td>
-                                        <td><span>{name}</span></td>
-                                        <td><span>{parseFloat(priceUsd).toFixed(2)}</span></td>
-                                        <td><span>{parseFloat(marketCapUsd).toFixed(2)}</span></td>
-                                        <td><span>{parseFloat(volumeUsd24Hr).toFixed(2)}</span></td>
-                                        <td><span>{parseFloat(changePercent24Hr).toFixed(2)}</span></td>
+                                        <td style={{ textAlign: "center" }} colSpan={1}><span>{rank}</span></td>
+                                        <td style={{ textAlign: "left" }} colSpan={2}><div className='flex-start'><img src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`} /><div className='flex-start flex-column'><span>{name}</span><span className='coin-symbol'>{symbol}</span></div></div></td>
+                                        <td colSpan={1}><span>${convert("", priceUsd)}</span></td>
+                                        <td colSpan={1}><span>${convert("billion", marketCapUsd)}</span></td>
+                                        <td colSpan={1}><span>${convert("", vwap24Hr)}</span></td>
+                                        <td colSpan={1}><span>{convert("million", supply)}</span></td>
+                                        <td colSpan={1}><span>${convert("billion", volumeUsd24Hr)}</span></td>
+                                        <td style={{color: `${changePercent24Hr <=0 ? "red" : "green"}`}} colSpan={1}><span>{convert("", changePercent24Hr)}%</span></td>
                                     </tr>
                                 )
                             })}

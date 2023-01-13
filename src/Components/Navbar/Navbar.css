@@ -16,6 +16,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0px 80px;
 }
 
 .navbar-left-options {
@@ -26,7 +27,7 @@
 
 .navbar-left-options li {
     list-style: none;
-    padding: 13px 16px;
+    padding: 22px 16px;
     cursor: pointer;
     transition: all 0.5s;
 }

@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.coin-symbol {
+    font-size: 0.8rem;
+    color: rgb(164 164 164);
+}
+
 .upper-container {
-    /* height: 200px; */
     background: linear-gradient(to right, rgb(63, 81, 181), rgb(100, 181, 246));
     flex-direction: row;
     padding: 10px 0px 130px 0px;
@@ -8,48 +14,60 @@
 .upper-container-item {
     flex-direction: column;
     margin: 0px;
-    margin: 5px 20px;
+    margin: 10px 55px;
 }
 
 .upper-container-item div {
     color: white;
     text-transform: uppercase;
+    font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
 }
 
 .upper-container-item div:nth-child(1) {
-    font-size: 1em;
-    font-weight: 600;
+    font-size: 0.9em;
+    font-weight: 400;
 }
 
 .upper-container-item div:nth-child(2) {
-    font-size: 1.5em;
+    font-size: 1.4rem;
 }
 
 .table-container {
-    position: relative;
     margin: auto;
     background: rgb(236, 239, 241);
+    padding: 20px;
 }
 
 .table-container table {
-    /* padding: 20px; */
     width: 1127px;
     border-radius: 5px 0px 0px 0px;
     background-color: white;
-    position: relative;
-    top: -100px;
+    box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px !important;
+    margin-top: -9rem;
 }
 
 .table-container tr {
-    /* padding: 10px; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
 }
 
 .table-container td, .table-container th {
-    padding: 0.8rem;
+    padding: 11px;
     text-align: right;
     width: fit-content;
+    cursor: pointer;
+}
+
+.table-container th {
+    color: rgb(120, 120, 120);
+    font-size: small;
+    font-weight: 300;
+}
+
+.table-container tr:hover {
+    background-color: #f6f6f6;
+}
+
+.table-container td img {
+    width: 38px;
+    margin: 0px 5.5px 0px 0px;
 }
