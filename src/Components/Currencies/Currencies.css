@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+.load-more-btn {
+    padding: 5px;
+    cursor: pointer;
+}
+
 .coin-symbol {
     font-size: 0.8rem;
     color: rgb(164 164 164);
@@ -55,6 +60,7 @@
     text-align: right;
     width: fit-content;
     cursor: pointer;
+    border-bottom: thin solid rgb(188, 188, 188);
 }
 
 .table-container th {

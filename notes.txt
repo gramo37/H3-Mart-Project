@@ -1,2 +1,1 @@
-1) Restrict to 50 items
-2) Make it responsive
+1) Make it responsive
