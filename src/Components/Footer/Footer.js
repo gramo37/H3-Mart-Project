@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Footer.css"
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookIcon from '@mui/icons-material/Facebook';
+import { FOOTER_APPLE_LOGO, FOOTER_GOOGLE_LOGO, TWITTER_ICON, FACEBOOK_ICON } from '../../Assets';
+import { FACEBOOK_LINK, TWITTER_LINK, GOOGLE_PLAY_STORE_LINK, APPLE_PLAY_STORE_LINK } from '../../Constants/Constant';
 
 const Footer = () => {
   return (
@@ -17,7 +17,7 @@ const Footer = () => {
             <li><a href="/">Careers</a></li>
           </ul>
         </div>
-        
+
         <div className='menu right-menu2'>
           <h2>LEGALS</h2>
           <ul>
@@ -34,15 +34,15 @@ const Footer = () => {
         <div className='menu right-menu1'>
           <h2>FOLLOW US</h2>
           <div>
-            <TwitterIcon />
-            <FacebookIcon />
+            <a href={TWITTER_LINK}><TWITTER_ICON /></a>
+            <a href={FACEBOOK_LINK}><FACEBOOK_ICON /></a>
           </div>
         </div>
         <div className='menu right-menu2'>
           <h2>COINCAP APP AVAILABLE ON</h2>
           <div>
-            <img src="https://coincap.io/static/images/stores/google_play.svg" alt="Google Store"/>
-            <img src="https://coincap.io/static/images/stores/apple_store.svg" alt="Apple Store"/>
+            <a href={GOOGLE_PLAY_STORE_LINK}><img src={FOOTER_GOOGLE_LOGO} alt="Google Store" /></a>
+            <a href={APPLE_PLAY_STORE_LINK}><img src={FOOTER_APPLE_LOGO} alt="Apple Store" /></a>
           </div>
         </div>
       </div>

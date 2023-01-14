@@ -1,1 +1,5 @@
 export const BASE_URL = "https://api.coincap.io/v2/assets"
+export const FACEBOOK_LINK = "https://www.facebook.com/coincapmarketdata/videos/365220420785166/"
+export const TWITTER_LINK = "https://twitter.com/CoinCap_io"
+export const GOOGLE_PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=io.coinCap.coinCap"
+export const APPLE_PLAY_STORE_LINK = "https://apps.apple.com/us/app/coincap/id1074052280?ign-mpt=uo%3D4"

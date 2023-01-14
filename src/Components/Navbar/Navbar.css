@@ -48,6 +48,7 @@
 
 .navbar-right-options div {
     margin: 5px 16px;
+    cursor: pointer;
 }
 
 .navbar-container img {
