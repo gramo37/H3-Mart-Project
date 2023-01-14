@@ -30,13 +30,13 @@ const CurrenciesContainer = () => {
                         <table cellSpacing={0}>
                             <thead>
                             <tr>
-                                <th style={{ textAlign: "center" }} colSpan={1}><span>Rank</span></th>
+                                <th className='flex-none-in-small-devices' style={{ textAlign: "center" }} colSpan={1}><span>Rank</span></th>
                                 <th style={{ textAlign: "left" }} colSpan={2}><span>Name</span></th>
                                 <th colSpan={1}><span>Price</span></th>
-                                <th colSpan={1}><span>Market Cap</span></th>
-                                <th colSpan={1}><span>VWAP 24hr</span></th>
-                                <th colSpan={1}><span>Supply</span></th>
-                                <th colSpan={1}><span>Volume 24hr</span></th>
+                                <th className='flex-none-in-small-devices' colSpan={1}><span>Market Cap</span></th>
+                                <th className='flex-none-in-small-devices' colSpan={1}><span>VWAP 24hr</span></th>
+                                <th className='flex-none-in-small-devices' colSpan={1}><span>Supply</span></th>
+                                <th className='flex-none-in-small-devices' colSpan={1}><span>Volume 24hr</span></th>
                                 <th colSpan={1}><span>Change 24hr</span></th>
                             </tr>
                             </thead>
@@ -45,13 +45,13 @@ const CurrenciesContainer = () => {
                             // {data?.data?.map(({ id, rank, name, priceUsd, marketCapUsd, vwap24Hr, supply, volumeUsd24Hr, changePercent24Hr, symbol }) => {
                                 return (
                                     <tr key={id}>
-                                        <td style={{ textAlign: "center" }} colSpan={1}><span>{rank}</span></td>
+                                        <td className='flex-none-in-small-devices' style={{ textAlign: "center" }} colSpan={1}><span>{rank}</span></td>
                                         <td style={{ textAlign: "left" }} colSpan={2}><div className='flex-start'><img src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`} alt={symbol}/><div className='flex-start flex-column'><span>{name}</span><span className='coin-symbol'>{symbol}</span></div></div></td>
                                         <td colSpan={1}><span>${convert("", priceUsd)}</span></td>
-                                        <td colSpan={1}><span>${convert("billion", marketCapUsd)}</span></td>
-                                        <td colSpan={1}><span>${convert("", vwap24Hr)}</span></td>
-                                        <td colSpan={1}><span>{convert("million", supply)}</span></td>
-                                        <td colSpan={1}><span>${convert("billion", volumeUsd24Hr)}</span></td>
+                                        <td className='flex-none-in-small-devices' colSpan={1}><span>${convert("billion", marketCapUsd)}</span></td>
+                                        <td className='flex-none-in-small-devices' colSpan={1}><span>${convert("", vwap24Hr)}</span></td>
+                                        <td className='flex-none-in-small-devices' colSpan={1}><span>{convert("million", supply)}</span></td>
+                                        <td className='flex-none-in-small-devices' colSpan={1}><span>${convert("billion", volumeUsd24Hr)}</span></td>
                                         <td style={{ color: `${changePercent24Hr <= 0 ? "red" : "green"}` }} colSpan={1}><span>{convert("", changePercent24Hr)}%</span></td>
                                     </tr>
                                 )

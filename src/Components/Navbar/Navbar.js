@@ -12,12 +12,13 @@ const Navbar = () => {
     <>
       <UpperNavBar />
       <div className='navbar-container'>
+      <img className="show-only-in-small-devices" src={NAVBAR_LOGO} />
         <ul className='navbar-left-options'>
           <li><a href="">Coins</a></li>
           <li><a href="">Exchanges</a></li>
           <li><a href="">Swap</a></li>
         </ul>
-        <img src={NAVBAR_LOGO} />
+        <img className="dont-show-in-small-devices" src={NAVBAR_LOGO} />
         <div className='navbar-right-options flex-center'>
           <div className='flex-center'>USD <ArrowDropDownIcon /></div>
           <div className='flex-center'>English <ArrowDropDownIcon /></div>

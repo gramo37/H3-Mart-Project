@@ -10,11 +10,11 @@ const Footer = () => {
         <div className='menu right-menu1'>
           <h2>COINCAP.IO</h2>
           <ul>
-            <li><a href="#">Methodolgy</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Our API</a></li>
-            <li><a href="#">Rate Comparison</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><a href="/">Methodolgy</a></li>
+            <li><a href="/">Support</a></li>
+            <li><a href="/">Our API</a></li>
+            <li><a href="/">Rate Comparison</a></li>
+            <li><a href="/">Careers</a></li>
           </ul>
         </div>
         
@@ -41,8 +41,8 @@ const Footer = () => {
         <div className='menu right-menu2'>
           <h2>COINCAP APP AVAILABLE ON</h2>
           <div>
-            <img src="https://coincap.io/static/images/stores/google_play.svg"/>
-            <img src="https://coincap.io/static/images/stores/apple_store.svg"/>
+            <img src="https://coincap.io/static/images/stores/google_play.svg" alt="Google Store"/>
+            <img src="https://coincap.io/static/images/stores/apple_store.svg" alt="Apple Store"/>
           </div>
         </div>
       </div>

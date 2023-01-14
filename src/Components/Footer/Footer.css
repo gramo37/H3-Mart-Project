@@ -46,3 +46,22 @@
     justify-content: center;
     align-items: flex-start;
 }
+
+@media only screen and (max-width: 1200px){
+    .menu {
+        width: 170px;
+    }
+}
+
+@media only screen and (max-width: 825px){
+    
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 305px){
+    .footer-right, .footer-left {
+        flex-direction: column;
+    }
+}

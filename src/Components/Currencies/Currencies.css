@@ -77,3 +77,42 @@
     width: 38px;
     margin: 0px 5.5px 0px 0px;
 }
+
+@media only screen and (max-width: 1200px){
+    .upper-container-item{
+        margin: 10px 30px;
+    }
+
+    .table-container table {
+        width: 100vw;
+    }
+
+    .table-container td, .table-container th {
+        padding:2px;
+    }
+}
+@media only screen and (max-width: 825px){
+    .table-container table {
+        margin-top: 0px;
+    }
+
+    .table-container {
+        padding: 0px;
+    }
+
+    .upper-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .upper-container-item {
+        flex-direction: row;
+    }
+
+    .upper-container-item div {
+        margin: 2px 10px;
+    }
+    .flex-none-in-small-devices{
+        display: none;
+    }
+}
