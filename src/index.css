@@ -21,3 +21,24 @@ body {
   align-items: flex-start;
   flex-direction: column;
 }
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show-only-in-small-devices {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .dont-show-in-small-devices {
+    display: none !important;
+  }
+
+  .show-only-in-small-devices {
+    display: block !important;
+  }
+}

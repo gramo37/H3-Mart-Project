@@ -3,7 +3,7 @@ import useFetch from "../../Hooks/useFetch"
 import { BASE_URL } from '../../Constants/Constant';
 import "./Currencies.css"
 import { convert } from "../../utils/convert"
-
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const CurrenciesContainer = () => {
     const { data, loading, error } = useFetch(BASE_URL);
@@ -74,6 +74,8 @@ const CurrenciesContainer = () => {
 }
 
 const UpperContainer = () => {
+    // const [showOptions, setShowOptions] = useState(false);
+
     const contents = [
         {
             name: "Market Cap:",
@@ -102,6 +104,10 @@ const UpperContainer = () => {
     ]
     return (
         <div className='upper-container flex-center'>
+            {/* <div className='show-only-in-small-devices'>
+                <span>Market Snapshot</span>
+                <div className={`${showOptions ? "arrow-normal" : "rotate-arrow"}`}><ArrowDropDownIcon /></div>
+            </div> */}
             {contents.map(({ name, price }) => {
                 return <UpperContainerItem key={name} name={name} price={price} />
             })}

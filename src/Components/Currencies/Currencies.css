@@ -93,6 +93,10 @@
     margin: 0px 5.5px 0px 0px;
 }
 
+.rotate-arrow {
+    /* transform: rotateZ(90deg); */
+}
+
 @media only screen and (max-width: 1200px){
     .upper-container-item{
         margin: 10px 30px;
@@ -104,6 +108,13 @@
 
     .table-container td, .table-container th {
         padding:2px;
+    }
+    .upper-container-item div:nth-child(1) {
+        font-size: 0.9em;
+    }
+    
+    .upper-container-item div:nth-child(2) {
+        font-size: 1.1rem;
     }
 }
 @media only screen and (max-width: 825px){
