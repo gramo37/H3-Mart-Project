@@ -1,144 +1,216 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
-.load-more-btn {
-    padding: 5px;
-    cursor: pointer;
-}
-
-.load-more-btn button {
-    background-color: rgb(27, 32, 32);
-    outline: none;
-    border: none;
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-.load-more-btn button:hover {
-    background-color: rgba(0, 0, 0, 0.692);
-}
-
-.coin-symbol {
-    font-size: 0.8rem;
-    color: rgb(164 164 164);
+.show-in-small-devices {
+  display: none !important;
 }
 
 .upper-container {
-    background: linear-gradient(to right, rgb(63, 81, 181), rgb(100, 181, 246));
-    flex-direction: row;
-    padding: 10px 0px 130px 0px;
+  background: var(--upper-container-bg-color);
+  flex-direction: row;
+}
+
+.upper-container-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+}
+
+.upper-container-content {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0px 130px 0px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .upper-container-item {
-    flex-direction: column;
-    margin: 0px;
-    margin: 10px 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 0px;
+  margin: 10px 55px;
 }
 
 .upper-container-item div {
-    color: white;
-    text-transform: uppercase;
-    font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+  color: var(--white);
+  text-transform: uppercase;
+  font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
 }
 
 .upper-container-item div:nth-child(1) {
-    font-size: 0.9em;
-    font-weight: 400;
+  font-size: 0.9em;
+  font-weight: 400;
 }
 
 .upper-container-item div:nth-child(2) {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 .table-container {
-    margin: auto;
-    background: rgb(236, 239, 241);
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: var(--light-gray);
+  padding: 20px;
 }
 
 .table-container table {
-    width: 1127px;
-    border-radius: 5px 0px 0px 0px;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px !important;
-    margin-top: -9rem;
+  width: 1127px;
+  border-radius: 5px 0px 0px 0px;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px !important;
+  margin-top: -9rem;
 }
 
 .table-container tr {
-    width: 100%;
+  width: 100%;
 }
 
-.table-container td, .table-container th {
-    padding: 11px;
-    text-align: right;
-    width: fit-content;
-    cursor: pointer;
-    border-bottom: thin solid rgb(188, 188, 188);
+.table-container td,
+.table-container th {
+  padding: 11px;
+  text-align: right;
+  width: fit-content;
+  cursor: pointer;
+  border-bottom: thin solid rgb(188, 188, 188);
 }
 
 .table-container th {
-    color: rgb(120, 120, 120);
-    font-size: small;
-    font-weight: 300;
+  font-size: small;
+  font-weight: 300;
+}
+
+.table-container th span {
+  color: var(--dark-gray);
 }
 
 .table-container tr:hover {
-    background-color: #f6f6f6;
+  background-color: var(--light-gray);
 }
 
 .table-container td img {
-    width: 38px;
-    margin: 0px 5.5px 0px 0px;
+  width: 30px;
+  margin: 0px 5.5px 0px 0px;
+}
+
+.load-more-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.load-more-btn button {
+  background-color: var(--black);
+  outline: none;
+  border: none;
+  padding: 10px;
+  color: var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.name-coin-symbol-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.coin-symbol-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.coin-symbol {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+}
+
+.load-more-btn button:hover {
+  background-color: var(--black);
 }
 
 .rotate-arrow {
-    /* transform: rotateZ(90deg); */
+  transform: rotate(0.25turn);
 }
 
-@media only screen and (max-width: 1200px){
-    .upper-container-item{
-        margin: 10px 30px;
-    }
+@media only screen and (max-width: 1200px) {
+  .upper-container-item {
+    justify-content: space-between;
+    margin: 10px 5px;
+    width: 30%;
+  }
 
-    .table-container table {
-        width: 100vw;
-    }
+  .upper-container-item div {
+    margin: 2px 10px;
+  }
 
-    .table-container td, .table-container th {
-        padding:2px;
-    }
-    .upper-container-item div:nth-child(1) {
-        font-size: 0.9em;
-    }
-    
-    .upper-container-item div:nth-child(2) {
-        font-size: 1.1rem;
-    }
+  .upper-container-item div:nth-child(1) {
+    font-size: 0.9em;
+  }
+
+  .upper-container-item div:nth-child(2) {
+    font-size: 1.1rem;
+  }
+
+  .table-container table {
+    width: 100vw;
+  }
+
+  .table-container td,
+  .table-container th {
+    padding: 6px 9px;
+  }
 }
-@media only screen and (max-width: 825px){
-    .table-container table {
-        margin-top: 0px;
-    }
+@media only screen and (max-width: 825px) {
+  .flex-none-in-small-devices {
+    display: none !important;
+  }
 
-    .table-container {
-        padding: 20px 0px;
-    }
+  .show-in-small-devices {
+    display: flex !important;
+  }
 
-    .upper-container {
-        flex-direction: column;
-        padding: 15px;
-    }
-    
-    .upper-container-item {
-        flex-direction: row;
-    }
+  .upper-container {
+    flex-direction: column;
+    padding: 15px;
+  }
 
-    .upper-container-item div {
-        margin: 2px 10px;
-    }
-    .flex-none-in-small-devices{
-        display: none;
-    }
+  .upper-container-item {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .upper-container-item div {
+    margin: 2px 10px;
+  }
+
+  .upper-container-item div:nth-child(1) {
+    font-size: 0.8em;
+  }
+
+  .upper-container-item div:nth-child(2) {
+    font-size: 1rem;
+  }
+
+  .upper-container-content {
+    flex-direction: column;
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .table-container {
+    padding: 0px;
+  }
+
+  .table-container table {
+    margin-top: 0px;
+  }
 }

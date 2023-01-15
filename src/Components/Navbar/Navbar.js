@@ -1,17 +1,10 @@
 import React, { useState } from 'react'
 import "./Navbar.css"
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
-import SearchIcon from '@mui/icons-material/Search';
-import SettingsIcon from '@mui/icons-material/Settings';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import SyncAltIcon from '@mui/icons-material/SyncAlt';
-import SwapHorizontalCircleIcon from '@mui/icons-material/SwapHorizontalCircle';
-import LaptopIcon from '@mui/icons-material/Laptop';
-
+import { ICONS } from "../../Constants/Constant"
 import { NAVBAR_LOGO } from "../../Assets"
+
+const { SwapHorizontalCircleIcon, ArrowForwardIcon, LaptopIcon, CurrencyBitcoinIcon, SearchIcon, SettingsIcon, ArrowDropDownIcon, MenuIcon, CloseIcon, SyncAltIcon } = ICONS
+
 const Navbar = () => {
   const [showSideBar, setShowSideBar] = useState(false)
 
@@ -31,7 +24,7 @@ const Navbar = () => {
         </ul>
         <img src={NAVBAR_LOGO} />
         <div className='hamburger-icon show-only-in-small-devices' onClick={toggleSideBar}>{!showSideBar ? <MenuIcon /> : <CloseIcon />}</div>
-        <div className='navbar-right-options flex-center dont-show-in-small-devices'>
+        <div className='navbar-right-options dont-show-in-small-devices'>
           <div className='flex-center'>USD <ArrowDropDownIcon /></div>
           <div className='flex-center'>English <ArrowDropDownIcon /></div>
           <div><SearchIcon sx={{ fontSize: 18 }} /></div>
@@ -45,7 +38,7 @@ const Navbar = () => {
 
 const UpperNavBar = () => {
   return (
-    <div href="http://bit.ly/3ERzmEc" target="_blank" className='upper-navbar-container flex-center'>
+    <div className='upper-navbar-container' href="http://bit.ly/3ERzmEc" target="_blank">
       <CurrencyBitcoinIcon sx={{ color: 'white' }} />
       <span>Buy, sell, & swap your favorite assets. No KYC. No added fees. Decentralized.</span>
       <ArrowForwardIcon sx={{ color: 'white' }} />

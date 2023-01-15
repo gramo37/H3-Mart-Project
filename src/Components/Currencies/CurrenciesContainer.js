@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import useFetch from "../../Hooks/useFetch"
-import { BASE_URL } from '../../Constants/Constant';
+import { BASE_URL, SMALL_DEVICE_WIDTH, ICONS } from '../../Constants/Constant';
 import "./Currencies.css"
 import { convert } from "../../utils/convert"
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+const { ArrowDropDownIcon } = ICONS;
 
 const CurrenciesContainer = () => {
     const { data, loading, error } = useFetch(BASE_URL);
@@ -19,8 +19,6 @@ const CurrenciesContainer = () => {
         setStart(start => start + itemsPerPage)
     }
 
-    // const a = '(24hr)'
-
     return (
         <div>
             {loading && <h1>Loading...</h1>}
@@ -28,7 +26,7 @@ const CurrenciesContainer = () => {
             {!loading &&
                 (<>
                     <UpperContainer />
-                    <div className='table-container flex-center'>
+                    <div className='table-container'>
                         <table cellSpacing={0}>
                             <thead>
                                 <tr>
@@ -47,13 +45,14 @@ const CurrenciesContainer = () => {
                                     return (
                                         <tr key={id}>
                                             <td className='flex-none-in-small-devices' style={{ textAlign: "center" }} colSpan={1}><span>{rank}</span></td>
-                                            <td style={{ textAlign: "left" }} colSpan={2}><div className='flex-start'>
-                                                <img src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`} alt={symbol} />
-                                                <div className='flex-start flex-column'>
-                                                    <span>{name}</span>
-                                                    <span className='coin-symbol'>{symbol}</span>
+                                            <td style={{ textAlign: "left" }} colSpan={2}>
+                                                <div className='name-coin-symbol-container'>
+                                                    <img src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`} alt={symbol} />
+                                                    <div className='coin-symbol-holder'>
+                                                        <span>{name}</span>
+                                                        <span className='coin-symbol'>{symbol}</span>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </td>
                                             <td colSpan={1}><span>${convert("", priceUsd)}</span></td>
                                             <td className='flex-none-in-small-devices' colSpan={1}><span>${convert("billion", marketCapUsd)}</span></td>
@@ -67,14 +66,29 @@ const CurrenciesContainer = () => {
                             </tbody>
                         </table>
                     </div>
-                    {start < 50 && <div className='load-more-btn flex-center'><button onClick={handleClick}>Load More</button></div>}
+                    {start < 50 && <div className='load-more-btn'><button onClick={handleClick}>Load More</button></div>}
                 </>)}
         </div>
     )
 }
 
 const UpperContainer = () => {
-    // const [showOptions, setShowOptions] = useState(false);
+    const [width, setWidth] = useState(window.innerWidth)
+    const [showOptions, setShowOptions] = useState(width > SMALL_DEVICE_WIDTH ? true : false);
+
+    const handleClick = () => {
+        setShowOptions(option => !option)
+    }
+
+    useEffect(() => {
+        window.addEventListener("resize", () => setWidth(window.innerWidth))
+    }, [])
+
+    useEffect(() => {
+        if (width < SMALL_DEVICE_WIDTH) return;
+        setShowOptions(width > SMALL_DEVICE_WIDTH ? true : false)
+    }, [width])
+
 
     const contents = [
         {
@@ -103,21 +117,23 @@ const UpperContainer = () => {
         },
     ]
     return (
-        <div className='upper-container flex-center'>
-            {/* <div className='show-only-in-small-devices'>
+        <div className='upper-container'>
+            <div className='show-in-small-devices upper-container-heading'>
                 <span>Market Snapshot</span>
-                <div className={`${showOptions ? "arrow-normal" : "rotate-arrow"}`}><ArrowDropDownIcon /></div>
-            </div> */}
-            {contents.map(({ name, price }) => {
-                return <UpperContainerItem key={name} name={name} price={price} />
-            })}
+                <div><ArrowDropDownIcon onClick={handleClick} className={`${!showOptions && "rotate-arrow"}`} /></div>
+            </div>
+            <div className='upper-container-content'>
+                {showOptions && contents.map(({ name, price }) => {
+                    return <UpperContainerItem key={name} name={name} price={price} />
+                })}
+            </div>
         </div>
     )
 }
 
 const UpperContainerItem = ({ name, price }) => {
     return (
-        <div className='upper-container-item flex-center'>
+        <div className='upper-container-item'>
             <div>{name}</div>
             <div>{price}</div>
         </div>

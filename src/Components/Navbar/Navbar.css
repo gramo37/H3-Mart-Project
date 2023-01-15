@@ -1,10 +1,24 @@
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-only-in-small-devices {
+  display: none;
+}
+
 .upper-navbar-container {
-  background: linear-gradient(
-    97.53deg,
-    rgb(246, 135, 179) 5.6%,
-    rgb(123, 97, 255) 59.16%,
-    rgb(22, 209, 161) 119.34%
-  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--navbar-bg-color);
   padding: 6px 16px;
 }
 
@@ -14,7 +28,7 @@
 }
 
 .upper-navbar-container span {
-  color: white;
+  color: var(--white);
 }
 
 .navbar-container {
@@ -22,6 +36,16 @@
   justify-content: space-around;
   align-items: center;
   padding: 0px 80px;
+}
+
+.navbar-container img {
+  width: 80px;
+  cursor: pointer;
+  padding: 15px 5px;
+}
+
+.navbar-container img:hover {
+  background: var(--light-gray);
 }
 
 .navbar-left-options {
@@ -39,12 +63,18 @@
 
 .navbar-left-options li a {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
 
 .navbar-left-options li:hover {
-  background: rgba(0, 0, 0, 0.029);
-  color: rgba(0, 0, 0, 0.95);
+  background: var(--light-gray);
+  color: var(--black);
+}
+
+.navbar-right-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-right-options div {
@@ -52,19 +82,10 @@
   cursor: pointer;
 }
 
-.navbar-container img {
-  width: 80px;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.navbar-container img:hover {
-  background: rgba(0, 0, 0, 0.029);
-}
-
 .hamburger-icon {
   padding: 22px 16px;
   margin: 0px 15px;
+  cursor: pointer;
 }
 
 .search-icon {
@@ -73,11 +94,11 @@
 }
 
 .navbar-side-bar {
-  position: absolute;
+  position: fixed;
   height: 100%;
   top: 0px;
   left: 0px;
-  background: white;
+  background: var(--white);
   transition: all 0.5s;
   padding: 13px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -102,11 +123,11 @@
 }
 
 .side-bar-item-container:hover {
-  background-color: rgb(235, 235, 235);
+  background-color: var(--light-gray);
 }
 
 .connect-wallet-button {
-  border-bottom: 1px solid rgb(205, 205, 205);
+  border-bottom: 1px solid var(--light-gray);
   padding: 10px;
   padding-bottom: 19px;
   display: flex;
@@ -117,12 +138,20 @@
   border: none;
   padding: 10px 20px;
   border-radius: 25px;
-  background-color: rgb(24 198 131);
-  color: white;
+  background-color: var(--green);
+  color: var(--white);
   font-weight: 600;
 }
 
 @media only screen and (max-width: 1200px) {
+  .show-only-in-small-devices {
+    display: block;
+  }
+
+  .dont-show-in-small-devices {
+    display: none;
+  }
+
   .navbar-container {
     justify-content: flex-start;
     padding: 0px 10px;
@@ -135,8 +164,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  /*Big smartphones [426px -> 600px]*/
-}
-@media only screen and (max-width: 425px) {
-  /*Small smartphones [325px -> 425px]*/
+  .navbar-container {
+    justify-content: space-between;
+  }
 }
